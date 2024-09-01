@@ -3104,8 +3104,7 @@ int smblib_get_prop_batt_charge_done(struct smb_charger *chg,
 			if ((smblib_get_fastcharge_mode(chg) == true)
 				&& (pval.intval >= 98)) {
 				smblib_set_fastcharge_mode(chg, false);
-				return 0;
-			}
+			return 0;
 		}
 
 		if (smblib_get_fastcharge_mode(chg) == true)
@@ -10443,7 +10442,7 @@ static void smblib_charger_type_recheck(struct work_struct *work)
 	if (chg->typec_port && !chg->pr_swap_in_progress) {
 
 		/*
-	    * Schedule the work to differentiate actual removal
+		* Schedule the work to differentiate actual removal
 		* of cable and detach interrupt during role swap,
 		* unregister the partner only during actual cable
 		* removal.
